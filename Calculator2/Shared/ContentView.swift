@@ -22,7 +22,7 @@ struct ContentView: View {
             // Display
                 HStack {
                     Spacer()
-                    Text("\(calculator_logic.value)")
+                    Text("\(calculator_logic.value.removeZerosFromEnd())")
                     .bold()
                     .font(.system(size: 50))
                 }.padding()
@@ -72,3 +72,14 @@ struct ContentView_Previews: PreviewProvider {
         }
     }
 }
+
+extension Double {
+    func removeZerosFromEnd() -> String {
+        let formatter = NumberFormatter()
+        let number = NSNumber(value: self)
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 7
+        return String(formatter.string(from: number) ?? "")
+    }
+}
+
