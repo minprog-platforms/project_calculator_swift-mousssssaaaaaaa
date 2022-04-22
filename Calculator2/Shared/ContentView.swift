@@ -38,9 +38,7 @@ struct ContentView: View {
                             
                         }
                         VStack {
-//                            Button(action: (calculator_logic.didTap(action: "neg")) {Text("+/-")}
-                            
-                            
+                            Button("+/-") {calculator_logic.didTap(action: "neg")}.calculatorButton()
                             Button("8") {calculator_logic.didTap(action: 8)}.calculatorButton()
                             Button("5") {calculator_logic.didTap(action: 5)}.calculatorButton()
                             Button("2") {calculator_logic.didTap(action: 2)}.calculatorButton()
